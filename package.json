@@ -1,6 +1,6 @@
 {
-  "name": "med-exempel-4",
-  "version": "0.1.0",
+  "name": "weather-app",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
