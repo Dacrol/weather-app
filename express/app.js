@@ -1,62 +1,38 @@
+const fetch = require('node-fetch');
 /* 
   The express app is a global called app
   It can respond on all routes under /api
 */
 let app = global.expressApp;
 
-// Set up socket.io
-const io = require('socket.io')(
-  global.httpServer, 
-  {
-    path: global.production ? '/api/socket' : '/socket',
-    serveClient: false
-  }
-);
 
-// Basic test of socket.io connectivity
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-  });
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
-// Some example data for the Todo app
-app.get('/todo-list-example-data',(req, res) => {
-  res.json([
-    {
-      "id": 0.14890674152580785,
-      "todo": "Create a project with React Warp Core",
-      "done": true
-    },
-    {
-      "id": 0.7582486745257166,
-      "todo": "Run npm start",
-      "done": true
-    },
-    {
-      "id": 0.4867703766375038,
-      "todo": "Continue testing",
-      "done": false
-    },
-    {
-      "id": 0.6641145526555352,
-      "todo": "Understand the code"
-    },
-    {
-      "id": 0.3006365270288174,
-      "todo": "Build something awesome"
-    },
-    {
-      "id": 0.6973592500276979,
-      "todo": "Start testing the Todo app",
-      "done": true
-    }
-  ]);
-});
+app.get('/search-location-weather', (req, res) => {
+  
+  const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+
+  const apiId = '&appid=8786c6ec53b7543aec64b953327991ec&units=metric';
+
+  const userLocation = (url1, url2, zipcode) => {
+    let newUrl = url1 + zipcode + url2;
+    return newUrl;
+  };
+
+  const apiUrl = userLocation(baseUrl, apiId, zipcode);
+
+  fetch(apiUrl)
+   .then(res => res.json())
+   .then(data => {
+      res.send({ data });
+   })
+   .catch(err => {
+      res.redirect('/error');
+   });
+});  
+
 
 // Answer hello world on all routes
 app.all('*', (req, res) => {
