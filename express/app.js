@@ -1,4 +1,5 @@
 const fetch = require('node-fetch')
+const express = require('express')
 /* 
   The express app is a global called app
   It can respond on all routes under /api
