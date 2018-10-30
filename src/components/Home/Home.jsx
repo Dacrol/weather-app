@@ -10,6 +10,7 @@
         placeholder="City"
       />
     </FormGroup>
+    <Button>Search</Button>
   </Form>
 </div>
 </div>
