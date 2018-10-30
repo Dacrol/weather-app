@@ -2,7 +2,7 @@
 <div className="text-center">
   <Form>
     <FormGroup>
-      <Label for="city">City:</Label>
+      <Label for="city">Search weather in:</Label>
       <Input
         type="text"
         name="city"
