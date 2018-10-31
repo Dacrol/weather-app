@@ -11,6 +11,7 @@
   "  Conditionals": "components/Conditionals/Conditionals",
   "  Loops": "components/Loops/Loops",
   "  Home": "components/Home/Home",
+  "  Weather": "components/Weather/Weather",
 
   "/*3": "--------  Utilities (Component based) --------",
   "  NavLink": "utilities/NavLink/NavLink",
