@@ -12,5 +12,6 @@
     </FormGroup>
     <Button>Search</Button>
   </Form>
+  <Weather />
 </div>
 </div>
