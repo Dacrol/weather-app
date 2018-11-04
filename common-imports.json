@@ -31,7 +31,6 @@
   "!registerServiceWorker": "utilities/registerServiceWorker",
   "!sleep": "utilities/sleep",
   "!fetchJSON": "utilities/fetchJSON",
-  "!socket": "utilities/socket",
 
   "/*5": "------------ React core + routing ------------", 
   "React": "react",
