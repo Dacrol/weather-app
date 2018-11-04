@@ -1,3 +1,4 @@
+const path = require('path')
 const fetch = require('node-fetch')
 const express = require('express')
 /* 
@@ -5,6 +6,7 @@ const express = require('express')
   It can respond on all routes under /api
 */
 let app = global.expressApp
+require('dotenv').config({ path: path.resolve(process.cwd(), 'env/.env') })
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -12,7 +14,7 @@ app.use(express.json())
 app.get('/search-location-weather', (req, res) => {
   const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip='
 
-  const apiId = '&appid=8786c6ec53b7543aec64b953327991ec&units=metric'
+  const apiId = `&appid=${process.env.KEY}&units=metric`
 
   const userLocation = (url1, url2, zipcode) => {
     let newUrl = url1 + zipcode + url2
