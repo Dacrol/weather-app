@@ -8,6 +8,8 @@
         name="city"
         id="city"
         placeholder="City"
+        value={this.city}
+        onChange={e => this.city = e.currentTarget.value}
       />
     </FormGroup>
     <Button>Search</Button>
