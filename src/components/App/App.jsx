@@ -10,10 +10,10 @@
           <Home />
         </Row>
       </Route>
-      <Route path="/clock" component={Clock} />
-      <Route path="/todo-list" component={TodoList} />
-      <Route path="/conditionals" component={Conditionals} />
-      <Route path="/loops" component={Loops} />
+      {/* <Route path="/clock" component={Clock} /> */}
+      {/* <Route path="/todo-list" component={TodoList} /> */}
+      {/* <Route path="/conditionals" component={Conditionals} /> */}
+      {/* <Route path="/loops" component={Loops} /> */}
     </Container>
   </div>
 </Router>
