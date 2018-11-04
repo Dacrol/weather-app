@@ -16,7 +16,7 @@ app.get('/search-weather-city', (req, res) => {
 
   const apiId = `&appid=${process.env.KEY}&units=metric`
 
-  const apiUrl = baseUrl + req.body.city + apiId
+  const apiUrl = baseUrl + replaceSwedish(req.body.city) + apiId
 
   fetch(apiUrl)
     .then(res => res.json())
@@ -27,3 +27,7 @@ app.get('/search-weather-city', (req, res) => {
       res.redirect('/error')
     })
 })
+
+function replaceSwedish (str) {
+  return str.replace('ö', 'oe')
+}
