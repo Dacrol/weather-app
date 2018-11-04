@@ -12,11 +12,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/search-weather-city', (req, res) => {
+  console.log(req.query)
   const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?q='
 
   const apiId = `&appid=${process.env.KEY}&units=metric`
 
-  const apiUrl = baseUrl + replaceSwedish(req.body.city) + apiId
+  const apiUrl = baseUrl + replaceSwedish(req.query.city) + apiId
 
   fetch(apiUrl)
     .then(res => res.json())
