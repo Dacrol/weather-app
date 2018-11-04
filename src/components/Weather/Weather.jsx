@@ -1,15 +1,15 @@
-this.props.weatherData && <CardTransparent>
-  <CardImg
+this.props.weatherData && this.data && <CardTransparent>
+  {this.data.weather && this.data.weather[0] && <CardImg
     top
-    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=512%C3%97333&w=512&h=333"
+    src={`http://openweathermap.org/img/w/${this.data.weather[0].icon}.png`}
     alt="Card image cap"
-  />
-  <CardBody>
-    <CardTitle>Card title</CardTitle>
-    <CardSubtitle>Card subtitle</CardSubtitle>
+    style={{maxWidth: '72px', alignSelf: 'center'}}
+  />}
+  <CardBody className="pt-0">
+    <CardTitle>{this.data.name}, {this.data.sys.country}</CardTitle>
+    <CardSubtitle>{this.data.main.temp} &deg;C</CardSubtitle>
     <CardText>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      {this.data.wind.speed} m/s
     </CardText>
   </CardBody>
 </CardTransparent>
