@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const CardTransparent = styled(Card)`
   background-color: transparent;
@@ -6,6 +6,16 @@ const CardTransparent = styled(Card)`
   max-width: 512px;
 `
 
+@observer
 export default class Weather extends Component {
-  async start() {}
+  @observable
+  data = null
+
+  componentWillReact() {
+    if (this.props.weatherData && this.props.weatherData.data) {
+      this.data = this.props.weatherData.data
+    }
+  }
+  async start() {
+  }
 }
