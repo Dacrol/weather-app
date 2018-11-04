@@ -1,5 +1,5 @@
 <div className="pt-5 w-100 d-flex justify-content-center align-items-center">
-  <div className="text-center">
+  <WeatherContainer className="text-center">
     <Form>
       <FormGroup>
         <Label for="city">Search weather in:</Label>
@@ -21,6 +21,6 @@
       </FormGroup>
       <Button onClick={(e) => this.search(e)}>Search</Button>
     </Form>
-    <Weather />
-  </div>
+    <Weather weatherData={this.weatherData}/>
+  </WeatherContainer>
 </div>

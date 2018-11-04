@@ -1,4 +1,4 @@
-<CardTransparent>
+this.props.weatherData && <CardTransparent>
   <CardImg
     top
     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=512%C3%97333&w=512&h=333"

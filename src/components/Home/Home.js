@@ -1,11 +1,16 @@
 import './Home.scss'
+import styled from 'styled-components';
+
+const WeatherContainer = styled.div`
+  min-width: 512px;
+`
 
 @observer
 export default class Home extends Component {
   @observable
   city = ''
   @observable
-  weatherData = {}
+  weatherData = null
 
   async start() {}
 
