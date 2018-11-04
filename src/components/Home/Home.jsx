@@ -9,7 +9,9 @@
           id="city"
           placeholder="City"
           value={this.city}
-          onChange={e => (this.city = e.currentTarget.value)}
+          onChange={(e) => {
+            this.updateCity(e)
+          }}
           onKeyPress={e => {
             if (e.key === 'Enter') {
               this.search(e)
@@ -17,7 +19,7 @@
           }}
         />
       </FormGroup>
-      <Button onClick={this.search}>Search</Button>
+      <Button onClick={(e) => this.search(e)}>Search</Button>
     </Form>
     <Weather />
   </div>

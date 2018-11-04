@@ -9,6 +9,10 @@ export default class Home extends Component {
 
   async start() {}
 
+  updateCity(e) {
+    this.city = e.currentTarget.value
+  }
+
   search(e) {
     e.preventDefault()
     fetch('/api/search-weather-city?city=' + this.city, {
