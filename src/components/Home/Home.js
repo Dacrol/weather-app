@@ -1,5 +1,5 @@
 import './Home.scss'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const WeatherContainer = styled.div`
   min-width: 512px;

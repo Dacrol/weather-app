@@ -16,6 +16,5 @@ export default class Weather extends Component {
       this.data = this.props.weatherData.data
     }
   }
-  async start() {
-  }
+  async start() {}
 }
