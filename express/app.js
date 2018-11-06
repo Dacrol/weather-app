@@ -30,5 +30,5 @@ app.get('/search-weather-city', (req, res) => {
 })
 
 function replaceSwedish (str) {
-  return str.replace('ö', 'oe')
+  return str.replace('ö', 'oe').replace('å', 'a')
 }
