@@ -20,7 +20,7 @@ export default class Home extends Component {
 
   search(e) {
     e.preventDefault()
-    fetch('/api/search-weather-city?city=' + this.city, {
+    fetch('/api/search-weather-city?city=' + this.city + ',SE', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
