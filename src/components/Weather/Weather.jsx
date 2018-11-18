@@ -1,5 +1,5 @@
 this.props.weatherData &&
-  this.data && this.data.sys && this.data.main && this.data.wind (
+  this.data && this.data.sys && this.data.main && this.data.wind && (
     <CardTransparent>
       {this.data.weather &&
         this.data.weather[0] && (
