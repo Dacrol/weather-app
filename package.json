@@ -66,7 +66,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "component": "node scripts/generate-component.js"
+    "component": "node scripts/generate-component.js",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -131,5 +132,8 @@
       },
       "ws": true
     }
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
